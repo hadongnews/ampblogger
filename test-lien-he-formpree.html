@@ -1,6 +1,5 @@
 <meta content='width=device-width, initial-scale=1' name='viewport'>
 <link href='https://fonts.googleapis.com/css?family=Roboto:100,200,300,400italic,400,500,500italic,700,700italic,900%7CMaterial+Icons' rel='stylesheet' type='text/css'/>
-
 <style>
 body {
   background-color:white;
@@ -35,71 +34,51 @@ h1,h2,h3{
 @media screen and (max-width:800px){#contactForm .styled-input {width:100%;}
 }
 </style>
-<script type="text/javascript">
-var submitted=false;
-var fadeEffect=function(){
- return{
-  init:function(id, flag, target){
-   this.elem = document.getElementById(id);
-   clearInterval(this.elem.si);
-   this.target = target ? target : flag ? 100 : 0;
-   this.flag = flag || -1;
-   this.alpha = this.elem.style.opacity ? parseFloat(this.elem.style.opacity) * 100 : 0;
-   this.elem.si = setInterval(function(){fadeEffect.tween()}, 20);
-  },
-  tween:function(){
-   if(this.alpha == this.target){
-    clearInterval(this.elem.si);
-   }else{
-    var value = Math.round(this.alpha + ((this.target - this.alpha) * .05)) + (1 * this.flag);
-    this.elem.style.opacity = value / 100;
-    this.elem.style.filter = 'alpha(opacity=' + value + ')';
-    this.alpha = value
-   }
+
+<script>
+function getQueryVariable(variable) {
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+    if(pair[0] == variable){return pair[1];}
   }
- }
-}();
-function myFunction() {
-    location.reload();
+  return(false);
 }
+var emailform = getQueryVariable("email");
+var urlthanks = getQueryVariable("url");
+var urlblog = getQueryVariable("blog");
+var titleblog = getQueryVariable('title').replace(/%20/g, " ");
 </script>
-<iframe id="hidden_iframe" name="hidden_iframe" onload="if(submitted){);}" style="display: none;"></iframe>
-            <form action="https://docs.google.com/forms/d/1aHcEFAqx-IpAPnWhCknh_9MHdEj1CkbTaofxxxxxxxx/formResponse" id="ss-form" method="POST" onsubmit="fadeEffect.init('fade', 1);document.getElementById('fade').style.display = 'block'" target="hidden_iframe">
-          <div class="styled-input">
-                        <div class="styled-input-in">
-                <input type="text" aria-label="Name" name="entry.2005620554" value="" id="entry.2005620554" dir="auto" title="" required="required">
-                                <label>Họ và tên</label>
-                                <span class="span1"></span><span class="span2"></span>
-            </div>
-          </div>
-          <div class="styled-input">
-                        <div class="styled-input-in">
-                <input type="email" aria-label="Email" name="entry.1045781291" value="" id="entry.1045781291" dir="auto" title="Must be a valid email address" required="required">
-                                <label>Địa chỉ Email</label>
-                                <span class="span1"></span><span class="span2"></span>
-            </div>
-          </div>
-          <div class="styled-input wide">
-                        <div class="styled-input-in">
-                <textarea aria-label="Comments" name="entry.839337160" rows="3" cols="0" id="entry.839337160" dir="auto" aria-required="true" required="required"></textarea>
-                                <label>Yêu cầu của bạn</label>
-                                <span class="span1"></span><span class="span2"></span>
-            </div>
-          </div>
-          <input name="draftResponse" type="hidden" value="[,,&quot;666676987482120412&quot;]">
-                    <input name="pageHistory" type="hidden" value="0">
-                    <input name="fbzx" type="hidden" value="666676987482120412">
-          <button type="submit" name="submit" class="btn btn-default">Send</button>
-          </div>
-      </form>
-            <div id="fade">
-<div class="thanks_layout">
-<div class="thanks_message">
-<img alt="Thumb" height="48" width="48" src="https://4.bp.blogspot.com/-rY5km74yj_I/V1ItqrbspBI/AAAAAAAAmxA/SK-aLPTjyuo8uiSYylRJ4tLslk2LJ581QCLcB/s1600/ic_thumb_up_black_24dp_2x.png" />
-        <h2>Form submitted successfully</h2>
-        <div>Jika tidak ada halangan dan kesibukan lainnya, admin akan langsung merespon pesan yang Anda kirimkan.</div>
-        <div class="close"><a href="javascript:void(0)" onclick="document.getElementById('fade').style.display = 'none' ;myFunction()" title="Close">&times;</a></div>
-</div>
-</div>
-</div>
+<div class="contact-box">
+<h1>Contact Form</h1>
+<script>
+document.write('<h2>'+titleblog+'</h2>\
+<form action="https://formspree.io/'+ emailform +'" method="POST" target="_blank" name="sentMessage" id="contactForm">\
+<input type="hidden" name="_next" value="'+ urlthanks +'" />\
+    <div class="styled-input">\
+      <div class="styled-input-in">\
+      <input type="text" name="name" required />\
+      <label>Name</label>\
+      <span class="span1"></span><span class="span2"></span> </div></div>\
+    <div class="styled-input">\
+      <div class="styled-input-in">\
+      <input type="email" name="_replyto" required />\
+      <label>Email</label>\
+      <span class="span1"></span><span class="span2"></span> </div></div>\
+    <div class="styled-input">\
+      <div class="styled-input-in">\
+      <input type="text" name="_subject" required />\
+      <label>Subject</label>\
+      <span class="span1"></span><span class="span2"></span> </div></div>\
+    <div class="styled-input wide">\
+      <div class="styled-input-in">\
+      <textarea name="message" required></textarea>\
+      <label>Message</label>\
+      <span class="span1"></span><span class="span2"></span> </div></div>\
+    <button type="submit" class="btn btn-default">Send</button>\
+    <input type="text" name="_gotcha" class="gotcha" />\
+  </form>\
+  <h3>Back to <a href="'+ urlblog +'" title="Homepage">Homepage</a></h3>');
+  </script>
 </div>
