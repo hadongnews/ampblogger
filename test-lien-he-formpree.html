@@ -1,0 +1,105 @@
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<link href='https://fonts.googleapis.com/css?family=Roboto:100,200,300,400italic,400,500,500italic,700,700italic,900%7CMaterial+Icons' rel='stylesheet' type='text/css'/>
+
+<style>
+body {
+  background-color:white;
+  margin:0;
+  padding:0 30px;
+  color:#212121;
+  font-family:'Roboto',sans-serif;
+}
+.contact-box{
+  overflow:hidden;
+}
+h1,h2,h3{
+  text-align:center;
+}
+#contactForm input:focus~label,#contactForm input:valid~label,#contactForm textarea:focus~label,#contactForm textarea:valid~label{font-size:.75em;color:red;top:-2.25rem;-webkit-transition:all 125ms ease;transition:all 125ms ease}
+#contactForm .styled-input{float:left;width:33.3333%;margin:2rem 0 0;padding:0 10px 0 0;position:relative;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+#contactForm .styled-input-in{position:relative}
+#contactForm{margin-right:-10px}
+#contactForm .styled-input label{color:#999;padding:1rem;position:absolute;top:0;left:0;-webkit-transition:all .25s ease;transition:all .25s ease;pointer-events:none;line-height:1}
+#contactForm .styled-input.wide{width:100%}
+#contactForm input,#contactForm textarea{font-family:'Roboto',sans-serif;padding:1rem;border:1px solid #ddd;width:100%;font-size:1rem;background:#fafafa;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+#contactForm input~.span1,#contactForm textarea~.span1{display:block;width:0;height:3px;background:red;position:absolute;left:50%;-webkit-transition:width .4s ease-in-out;transition:width .4s ease-in-out}
+#contactForm input~.span2,#contactForm textarea~.span2{display:block;width:0;height:3px;background:red;position:absolute;right:50%;-webkit-transition:width .4s ease-in-out;transition:width .4s ease-in-out}
+#contactForm input~span{bottom:0}
+#contactForm textarea~span{bottom:0}
+#contactForm input:focus,#contactForm textarea:focus{outline:0}
+#contactForm input:focus~.span1,#contactForm input:focus~.span2,#contactForm textarea:focus~.span1,#contactForm textarea:focus~.span2{width:50%}
+#contactForm textarea{width:100%;min-height:15em}
+#contactForm .btn{font-family:Helvetica,Arial,sans-serif;text-transform:uppercase;font-size:14px;font-weight:800;letter-spacing:1px;border-radius:0;padding:0 25px;height:51px;line-height:51px;color:#333;background-color:#fafafa;border:1px solid #ddd;cursor:pointer;margin:20px 0 0;background-image:none}
+#contactForm .btn-default:focus,#contactForm .btn-default:hover{background-color:red;border:1px solid #c40303;color:#fff}
+#contactForm .gotcha{border:none;background:0 0;display:none}
+@media screen and (max-width:800px){#contactForm .styled-input {width:100%;}
+}
+</style>
+<script type="text/javascript">
+var submitted=false;
+var fadeEffect=function(){
+ return{
+  init:function(id, flag, target){
+   this.elem = document.getElementById(id);
+   clearInterval(this.elem.si);
+   this.target = target ? target : flag ? 100 : 0;
+   this.flag = flag || -1;
+   this.alpha = this.elem.style.opacity ? parseFloat(this.elem.style.opacity) * 100 : 0;
+   this.elem.si = setInterval(function(){fadeEffect.tween()}, 20);
+  },
+  tween:function(){
+   if(this.alpha == this.target){
+    clearInterval(this.elem.si);
+   }else{
+    var value = Math.round(this.alpha + ((this.target - this.alpha) * .05)) + (1 * this.flag);
+    this.elem.style.opacity = value / 100;
+    this.elem.style.filter = 'alpha(opacity=' + value + ')';
+    this.alpha = value
+   }
+  }
+ }
+}();
+function myFunction() {
+    location.reload();
+}
+</script>
+<iframe id="hidden_iframe" name="hidden_iframe" onload="if(submitted){);}" style="display: none;"></iframe>
+            <form action="https://docs.google.com/forms/d/1aHcEFAqx-IpAPnWhCknh_9MHdEj1CkbTaofxxxxxxxx/formResponse" id="ss-form" method="POST" onsubmit="fadeEffect.init('fade', 1);document.getElementById('fade').style.display = 'block'" target="hidden_iframe">
+          <div class="styled-input">
+                        <div class="styled-input-in">
+                <input type="text" aria-label="Name" name="entry.2005620554" value="" id="entry.2005620554" dir="auto" title="" required="required">
+                                <label>Họ và tên</label>
+                                <span class="span1"></span><span class="span2"></span>
+            </div>
+          </div>
+          <div class="styled-input">
+                        <div class="styled-input-in">
+                <input type="email" aria-label="Email" name="entry.1045781291" value="" id="entry.1045781291" dir="auto" title="Must be a valid email address" required="required">
+                                <label>Địa chỉ Email</label>
+                                <span class="span1"></span><span class="span2"></span>
+            </div>
+          </div>
+          <div class="styled-input wide">
+                        <div class="styled-input-in">
+                <textarea aria-label="Comments" name="entry.839337160" rows="3" cols="0" id="entry.839337160" dir="auto" aria-required="true" required="required"></textarea>
+                                <label>Yêu cầu của bạn</label>
+                                <span class="span1"></span><span class="span2"></span>
+            </div>
+          </div>
+          <input name="draftResponse" type="hidden" value="[,,&quot;666676987482120412&quot;]">
+                    <input name="pageHistory" type="hidden" value="0">
+                    <input name="fbzx" type="hidden" value="666676987482120412">
+          <button type="submit" name="submit" class="btn btn-default">Send</button>
+          </div>
+      </form>
+            <div id="fade">
+<div class="thanks_layout">
+<div class="thanks_message">
+<img alt="Thumb" height="48" width="48" src="https://4.bp.blogspot.com/-rY5km74yj_I/V1ItqrbspBI/AAAAAAAAmxA/SK-aLPTjyuo8uiSYylRJ4tLslk2LJ581QCLcB/s1600/ic_thumb_up_black_24dp_2x.png" />
+        <h2>Form submitted successfully</h2>
+        <div>Jika tidak ada halangan dan kesibukan lainnya, admin akan langsung merespon pesan yang Anda kirimkan.</div>
+        <div class="close"><a href="javascript:void(0)" onclick="document.getElementById('fade').style.display = 'none' ;myFunction()" title="Close">&times;</a></div>
+</div>
+</div>
+</div>
+</div>
